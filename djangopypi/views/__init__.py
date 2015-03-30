@@ -34,7 +34,7 @@ def root(request, fallback_view=None, **kwargs):
     
     if not action in settings.DJANGOPYPI_ACTION_VIEWS:
         log.error('Invalid action encountered: %s' % (action,))
-        return HttpResponseNotAllowed(settings.DJANGOPYPI_ACTION_VIEW.keys())
+        return HttpResponseNotAllowed(settings.DJANGOPYPI_ACTION_VIEWS.keys())
 
     log.debug('Applying configured action view for %s' % (action,))
     return settings.DJANGOPYPI_ACTION_VIEWS[action](request, **kwargs)
