@@ -25,6 +25,8 @@ def root(request, fallback_view=None, **kwargs):
         action = request.POST.get(':action','')
     else:
         action = request.GET.get(':action','')
+
+    action = action.strip()
     
     if not action:
         log.debug('No action in root view')
