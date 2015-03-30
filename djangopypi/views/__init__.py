@@ -4,7 +4,6 @@ from django.conf import settings
 from django.http import HttpResponseNotAllowed
 
 from djangopypi.decorators import csrf_exempt
-from djangopypi.http import parse_distutils_request
 from djangopypi.models import Package, Release
 from djangopypi.views.xmlrpc import parse_xmlrpc_request
 
@@ -21,13 +20,10 @@ def root(request, fallback_view=None, **kwargs):
             log.debug('XMLRPC request received')
             return parse_xmlrpc_request(request)
         log.debug('Distutils request received')
-        parse_distutils_request(request)
         action = request.POST.get(':action','')
     else:
         action = request.GET.get(':action','')
 
-    action = action.strip()
-    
     if not action:
         log.debug('No action in root view')
         if fallback_view is None:
