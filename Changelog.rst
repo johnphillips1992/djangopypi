@@ -1,6 +1,25 @@
 History
 =======
 
+0.4.7 (2015-10-27)
+------------------
+
+* bug fix to conform to new distutils http upload format
+
+0.4.6 (2015-10-26)
+------------------
+
+* DO NOT USE THIS VERSION
+* thought I had solved the distutils issue but was wrong
+  md5 has error when downloading the package
+
+0.4.5 (2015-10-13)
+------------------
+
+* DO NOT USE THIS VERSION
+* thought I had solved the distutils issue but was wrong
+  database error for md5 hash length upon upload
+
 0.4.4 (2012-04-18)
 ------------------
 
